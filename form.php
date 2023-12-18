@@ -1,21 +1,29 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+    $name = $_POST['name'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $message = $_POST['message'] ?? '';
 
-    // You can perform validation or any processing of the form data here
+    // Basic form validation
+    if (empty($name) || empty($email) || empty($message)) {
+        echo "Please fill in all fields";
+        exit;
+    }
 
-    // For demonstration purposes, let's just display the received data
-    echo "Name: " . $name . "<br>";
-    echo "Email: " . $email . "<br>";
-    echo "Message: " . $message . "<br>";
+    // Process the form data (you can add your specific functionality here)
 
-    // Here you can add code to save the form data to a database, send an email, etc.
-} else {
-    // If the form wasn't submitted via POST method, redirect back to the form page or handle the situation accordingly
-    header("Location: your_form_page.php");
-    exit();
+    // Example: Sending an email
+    $to = "sabrina.bridget@outlook.com";
+    $subject = "New Contact Form Submission";
+    $email_body = "Name: $name\nEmail: $email\nMessage: $message";
+
+    if (mail($to, $subject, $email_body)) {
+        echo "Email sent successfully";
+        // Redirect after form submission (optional)
+        header("Location: thank-you.html");
+        exit;
+    } else {
+        echo "Email failed to send";
+    }
 }
 ?>
