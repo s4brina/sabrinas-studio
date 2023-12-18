@@ -15,10 +15,18 @@
             <div class="home">
                 <li><a href="#home">Sabrina's Studio</a></li>
             </div>
+            <div class="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="menu">
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#work">Work</a></li>
-            <li><a href="#contact" class="contact_me">Get in Touch</a></li>
+            <li><a href="#contact" class="contact_me">Get in Touch
+            </a></li>
+        </ul>
         </nav>
     </header>    
 
@@ -28,6 +36,9 @@
                 <source src="coding_vid.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+            <div class="slaysecond" width="100%">
+                <img src="still.png" class="slaysecond" type="image">
+            </div>
             <h1 class="maintitle">
                 Empowering businesses<br> with quality websites.
             </h1>
@@ -44,7 +55,8 @@
             Hey! I'm Sabrina, your local web designer.
         </h2>
         <p class="para_text">
-            I'm Sabrina, a web designer based in Brisbane, Australia. Sabrina's Studio is where I bring design to life. My focus is on providing a suite of design services, covering graphics, web design, and web development- all with an emphasis on quality and affordability.<br><br>
+            I'm Sabrina, a web designer based in Brisbane, Australia, and i'm currently studying a Bachelor of Interaction Design at QUT.Sabrina's Studio is where I bring design to life. My focus is on providing a suite of design services, covering graphics, web design, and web development- all of high quality and affordability.<br><br>
+            I specialise in HTML, CSS and Javascript, so I can create your website from scratch! This will save you greatly in overall site maintenance fees. <br><br>
             
             My promise to you is simple: delivering exceptional work that is also completely free from bugs or issues. Plus, I won't break the bank in the process. <br><br>Looking forward to working with you!
         </p>
@@ -52,9 +64,11 @@
     </section>
     <section class="hidden">
     <div class="image_box">
-
+<div class="profile-pic">
+    <img src="Untitled design.png" class="profile-radius">
+</div>
         <video class="mevid"controls poster="thumb.jpg">
-            <source src="intro.mov">
+            <source src="vid.mov">
         </video>
     </div>
 </section>
@@ -65,28 +79,36 @@
         <h2>
             Services
         </h2>
-        <p>
+        <p class="serv_txt">
             I specialise in and offer a number of services depending on the needs of your brand.
         </p>
         <div class="service_container">
             <div class="services_box hidden">
+                <a href="graphicdesign.html">
                 <img class="services_img" src="graphic_design.jpg">
                 <p class="services_text">Graphic Design</p>
+                </a>
             </div>
 
             <div class="services_box hidden">
+                <a href="webdesign.html">
                 <img class="services_img" src="web_design.jpg">
                 <p class="services_text">Website Design</p>
+            </a>
             </div>
 
             <div class="services_box hidden">
+                <a href="webdevelopment.html">
                 <img class="services_img" src="web_development.jpg">
                 <p class="services_text">Website Development</p>
+            </a>
             </div>
 
             <div class="services_box hidden">
+                <a href="marketing.html">
                 <img class="services_img" src="social_media.jpg">
                 <p class="services_text">Marketing</p>
+            </a>
             </div>
         </div>
     </section>
@@ -150,7 +172,7 @@
 <div id ="contact">
     <section class="hidden">
         <h2>
-            Get in touch
+            Get in touch !
         </h2>
         <div id="contact-form" style="max-width: 300px; margin: 0 auto; padding-inline: 120px; padding-top: 50px; padding-bottom: 50px; background-color: #fcfaf9; border: 1px solid #ccc; border-radius: 10px; margin-top: 20px;">
             <form action="form.php" method="post">
@@ -163,15 +185,16 @@
                 <label for="message" style="display: block; margin-bottom: 5px;">Message:</label>
                 <textarea id="message" name="message" rows="4" required style="width: 100%; padding-bottom: 20px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 3px; font-size: 14px;"></textarea>
     
-                <input type="submit" value="Submit" style="background-color: #ffffff; color: #000000; border: 1px solid; padding: 10px 20px; border-radius: 3px; cursor: pointer; font-family: 'Paralucent Text';">
+                <input type="submit" value="Submit" style="background-color: #ffffff; color: #000000; border: 1px solid; padding: 10px 20px; border-radius: 3px; cursor: pointer; font-family: 'Raleway';">
             </form>
         </div>
+        <p class="para_text">Alternatively, shoot me an email here: sabrina.bridget@outlook.com</p>
     </section>
 </div>
 
 
 <footer>
-    Sabrina's Studio ® 2023 <br>-<br>This website was made entirely by me  with the help of HTML, CSS and JS :)
+    Sabrina's Studio ® 2023 
 </footer>
 
 </body>

@@ -1,11 +1,14 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
 html, body {
-    overscroll-behavior: none;
     scroll-behavior: smooth;
     background-color: rgb(247, 243, 239);
 }
 
-body {
-    font-family: 'Paralucent Text';
+body, input {
+    font-family: 'Raleway', sans-serif;
     padding: 0;
     margin: 0;
 }
@@ -21,7 +24,7 @@ section {
 
 .hidden {
     opacity: 0;
-    transition: 1.5s;
+    transition: 1s;
     filter: blur(10px);
     transform: translateX(-50%) ;
 }
@@ -50,7 +53,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    color: grey;
 }
 
 a:hover {
@@ -123,15 +126,18 @@ footer {
 .two {
     padding-left: 225px;
     max-width: 1300px;
+    padding-top: 50px;
 }
 
 .service_container {
     display: flex;
+    flex-wrap: wrap; /* Allow items to wrap into multiple lines */
+    justify-content: space-around; /* Adjust alignment as needed */
     cursor: pointer;
+}
 
-}.services_box {
+.services_box {
     position: relative;
-    display: inline-block;
     width: 250px; /* Adjust this width as needed */
     height: auto; /* Allow the height to adjust based on content */
     overflow: hidden;
@@ -140,9 +146,10 @@ footer {
     border-radius: 10px;
 }
 
+
 .services_img {
     border-radius: 10px;
-    transition: transform 0.8s ease, filter 0.8s;
+    transition: transform 0.5s ease, filter 0.5s;
     width: 100%;
     height: 100%; /* Let the height adjust based on image proportions */
     object-fit: cover; /* Maintain aspect ratio without distortion */
@@ -150,7 +157,7 @@ footer {
 }
 
 .services_box:hover .services_img {
-    transform: scale(1.08);
+    transform: scale(1.1);
     filter: brightness(0.3);
 }
 
@@ -160,7 +167,7 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    transition: opacity 0.8s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     color: white;
     font-size: 20px;
     text-align: center;
@@ -217,6 +224,7 @@ hr {
 .caption {
     margin-top: 50px;
     padding-bottom: 30px;
+    text-align: center;
 }
 
 .work_list {
@@ -242,7 +250,7 @@ hr {
     width: 100%;
     height: 100%; /* Set the height to match the width */
     object-fit: cover; /* Maintain square aspect ratio */
-    transition: transform 1s, filter 1s; /* Add smooth transition */
+    transition: transform 0.5s, filter 0.5s; /* Add smooth transition */
     cursor: pointer;
 }
 
@@ -344,19 +352,19 @@ iframe {
     height: 600px;
 }
 
-.slayfirst {
-    filter: brightness(0.5);
-    z-index: -1;
-}
-
-
 #home {
     position: relative;
 }
 
 .slayfirst {
     width: 100%;
-    filter: brightness(0.5);
+    filter: brightness(0.4);
+}
+
+.slaysecond {
+    display:none;
+    width: 100%;
+    filter: brightness(0.6);
 }
 
 .maintitle,
@@ -378,19 +386,214 @@ iframe {
     bottom: 20%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
     .maintitle {
-        font-size: 20px;
-        top: 40%;
+        font-size: 30px;
+        top: 29%;
+    }
+
+    #about {
+        grid-gap: 6px; /* Add gap between items */
     }
 
     .caption {
-        top: 45%;
+        top: 48%;
         bottom: 0%;
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .learn_more {
-        bottom: 35%;
+        bottom: 37%;
+        font-size: 13px;
+        padding-top: 2px;
+        padding-bottom: 2px;
     }
 }
+
+
+.menu-icon {
+    display: none; /* Hide the menu icon by default on larger screens */
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Media query for smaller screens - show burger menu */
+@media screen and (max-width: 900px) {
+    .menu {
+        display: none; /* Hide the menu items by default on smaller screens */
+        flex-direction: column;
+        text-align: right;
+        background-color: transparent;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .menu.active {
+        display: flex; /* Show the menu items when the menu is active */
+    }
+
+    .menu-icon {
+        display: block; /* Show the burger menu icon */
+    }
+
+    .contact_me {
+        border: none;
+        padding-inline: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 2px;
+    }
+
+    .two {
+        padding-left: 100px;
+        padding-top: 100px;
+    }
+
+    .work_list {
+        display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 42px;
+  padding-inline: 41px;
+  padding-bottom: 82px;
+    }
+
+    .serv_txt {
+        padding-inline: 50px;
+        text-align: center;
+    }
+
+    section {
+        display: grid;
+        place-items: center;
+        align-content: center;
+        min-height: 10vh;
+      }
+
+      .hidden {
+        justify-content: center;
+      }
+
+      .about_header {
+        font-size: 40px;
+      }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .work_list {
+    grid-template-columns: repeat(1, 1fr);
+    padding-inline: 80px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+.mevid {
+    width: 400px;
+}
+
+.me {
+    width: 100%;
+    align-items: center;
+    transition-delay: 400ms;
+    border-radius: 10px;
+    box-shadow: 0px 2px 15px rgba(49, 49, 49, 0.1);
+}
+
+#about {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust as needed */
+    grid-gap: 6px; /* Add gap between items */
+}
+
+#about .hidden {
+    width: 100%; /* Adjust as needed */
+}
+
+.two {
+    /* If this class is part of the grid, adjust properties accordingly */
+    /* For instance, consider adjusting padding or width for grid-based layout */
+    padding: 20px; /* Example padding */
+    max-width: none; /* Adjust based on grid layout */
+}
+}
+
+li {
+    list-style: none;
+  }
+
+  #iframe-container {
+    text-align: center;
+    padding-top: 7vh;
+  }
+
+  #iframe-container iframe {
+    width: 600px; /* Adjust the width as needed */
+    height: 450px; /* Adjust the height as needed */
+  }
+
+  .image-gallery {
+        column-count: 3; /* Number of columns */
+        column-gap: 15px; /* Spacing between columns */
+        width: 90%;
+        padding-inline: 10vh;
+      }
+      
+      .image {
+        display: inline-block;
+        margin-bottom: 15px; /* Spacing between items */
+        width: 100%; /* Ensure full width of the column */
+      }
+      
+      .image img {
+        width: 100%; /* Make images fill their containers */
+        display: block;
+      }
+      
+      @media only screen and (max-width: 1200px) {
+        .learn_more {
+            bottom: 9%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .slayfirst {
+            display: none;
+        }
+
+        .slaysecond {
+            display: block;
+            
+        }
+      }
+      
+      .mevid {
+        display: none;
+      }
+
+      .profile-pic {
+        width: 50%;
+      }
+
+      .profile-radius {
+        border-radius: 30px;
+      }
